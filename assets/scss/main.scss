@@ -99,6 +99,7 @@ button {
 .btn-primary {
   background-color: #01d29b;
   border: none;
+  color: $body-color;
   &:hover {
     background-color: darken(#01d29b, 5%);
   }
@@ -118,5 +119,23 @@ button {
   &.challenge-solved {
     background-color: rgba(#01d29b, 0.2);
     border-color: #01d29b;
+  }
+}
+
+.nav-link {
+  color: $body-color !important;
+  &:hover {
+    color: #01d29b !important;
+  }
+}
+
+.active {
+  color: #01d29b !important;
+}
+
+.btn-close {
+  color: $body-color !important;
+  &:hover {
+    color: #01d29b !important;
   }
 }
