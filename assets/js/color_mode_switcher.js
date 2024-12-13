@@ -26,29 +26,28 @@ function showActiveTheme(theme) {
 }
 
 // Change body theme early to prevent flash
-let currentTheme = getPreferredTheme();
+let currentTheme = "light";
 document.documentElement.setAttribute("data-bs-theme", currentTheme);
 
 // On browser color-scheme change, update
 window
 	.matchMedia("(prefers-color-scheme: dark)")
 	.addEventListener("change", () => {
-		currentTheme = getPreferredTheme();
+		currentTheme = "light";
 		document.documentElement.setAttribute("data-bs-theme", currentTheme);
-		showActiveTheme(currentTheme);
+		//	showActiveTheme(currentTheme);
 	});
 
 window.addEventListener("load", () => {
-	showActiveTheme("dark");
+	showActiveTheme("light");
 
 	// On button click, switch
-	document.querySelectorAll(".theme-switch").forEach((e) => {
-		e.addEventListener("click", (ev) => {
-			currentTheme = currentTheme === "light" ? "dark" : "light";
-			document.documentElement.setAttribute("data-bs-theme", currentTheme);
-			localStorage.setItem("theme", currentTheme);
-			showActiveTheme(currentTheme);
-			ev.preventDefault();
-		});
-	});
+	// document.querySelectorAll(".theme-switch").forEach((e) => {
+	// 	e.addEventListener("click", (ev) => {
+	// 		document.documentElement.setAttribute("data-bs-theme", "light");
+	// 		localStorage.setItem("theme", "light");
+	// 		showActiveTheme("light");
+	// 		ev.preventDefault();
+	// 	});
+	// });
 });
