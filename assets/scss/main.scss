@@ -1,0 +1,122 @@
+@use "bootstrap/scss/bootstrap" as * with (
+  $primary: #01d29b,
+  $body-bg: #08090a,
+  $body-color: #ffffff,
+  $dark: darken(#08090a, 3%),
+  $light: lighten(#08090a, 10%),
+  $navbar-dark-color: #ffffff,
+  $navbar-dark-hover-color: #01d29b,
+  $card-bg: lighten(#08090a, 5%),
+  $input-bg: lighten(#08090a, 5%),
+  $input-color: #ffffff,
+  $input-border-color: rgba(#01d29b, 0.2),
+  $modal-content-bg: #08090a,
+  $modal-content-color: #ffffff,
+  $table-color: #ffffff,
+  $table-bg: transparent,
+  $dropdown-bg: #08090a,
+  $dropdown-color: #ffffff,
+  $dropdown-link-color: #ffffff,
+  $dropdown-link-hover-bg: lighten(#08090a, 10%),
+  $dropdown-link-hover-color: #01d29b
+);
+
+@use "includes/components/table";
+@use "includes/components/jumbotron";
+@use "includes/components/challenge";
+@use "includes/components/sticky-footer";
+@use "includes/components/graphs";
+
+@use "includes/utils/fonts";
+@use "includes/utils/opacity";
+@use "includes/utils/min-height";
+@use "includes/utils/cursors";
+@use "includes/utils/lolight";
+
+@use "includes/icons/award-icons";
+@use "includes/icons/flag-icons";
+
+h1,
+h2 {
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+blockquote {
+  border-left: 4px solid $secondary;
+  padding-left: 15px;
+}
+
+input,
+select,
+button {
+  padding: 0.6rem !important;
+  height: auto !important;
+}
+
+.fa-spin.spinner {
+  text-align: center;
+  opacity: 0.5;
+}
+
+.badge-notification {
+  vertical-align: top;
+  margin-left: -1.5em;
+  font-size: 50%;
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e");
+  background-size: 8px 10px;
+}
+
+.navbar {
+  background-color: rgba(#08090a, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+.jumbotron {
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(#01d29b, 0.1), transparent);
+    z-index: -1;
+  }
+}
+
+.btn-primary {
+  background-color: #01d29b;
+  border: none;
+  &:hover {
+    background-color: darken(#01d29b, 5%);
+  }
+}
+
+.challenge-button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(#01d29b, 0.2);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #01d29b;
+    transform: translateY(-2px);
+  }
+
+  &.challenge-solved {
+    background-color: rgba(#01d29b, 0.2);
+    border-color: #01d29b;
+  }
+}
